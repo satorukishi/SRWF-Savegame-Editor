@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34309.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satoru.SRWF.Savegame.UI", "Satoru.SRWF.Savegame.UI\Satoru.SRWF.Savegame.UI.csproj", "{74D4EB45-FE22-4A37-B902-61F783DD5F6C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Satoru.SRWF.Savegame.Service", "Satoru.SRWF.Savegame.Service\Satoru.SRWF.Savegame.Service.csproj", "{880FC9D1-EAF2-4296-AE23-457CA660E18E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{74D4EB45-FE22-4A37-B902-61F783DD5F6C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74D4EB45-FE22-4A37-B902-61F783DD5F6C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74D4EB45-FE22-4A37-B902-61F783DD5F6C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74D4EB45-FE22-4A37-B902-61F783DD5F6C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{880FC9D1-EAF2-4296-AE23-457CA660E18E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{880FC9D1-EAF2-4296-AE23-457CA660E18E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{880FC9D1-EAF2-4296-AE23-457CA660E18E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{880FC9D1-EAF2-4296-AE23-457CA660E18E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2C1939EB-8231-41D3-8D20-2D4D69C9993B}
+	EndGlobalSection
+EndGlobal
