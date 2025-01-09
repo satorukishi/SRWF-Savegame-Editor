@@ -40,7 +40,6 @@ namespace Satoru.SRWF.Savegame.UI
             RefreshSection("appSettings");
         }
 
-
         private void OpenFile(string filename)
         {
             if (File.Exists(filename))
