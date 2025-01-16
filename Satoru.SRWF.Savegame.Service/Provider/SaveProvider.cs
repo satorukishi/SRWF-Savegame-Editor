@@ -1,5 +1,7 @@
 ﻿using System;
 using System.IO;
+using System.Linq;
+using System.Management.Instrumentation;
 
 namespace Satoru.SRWF.Savegame.Service
 {
@@ -7,7 +9,7 @@ namespace Satoru.SRWF.Savegame.Service
     {
         private const int HEXA_VERIFIER_OFFSET = 17;
         private const int HEXA_VERIFIER_LENGTH = 3;
-        private const int FUNDS_OFFSET = 20;
+        private const int FUNDS_OFFSET = 26;
         private const int FUNDS_LENGTH = 3;
 
         private string _filename;
@@ -16,34 +18,60 @@ namespace Satoru.SRWF.Savegame.Service
         public SaveProvider(string filename)
         {
             _filename = filename;
-            _content = File.ReadAllBytes(filename);
+
+            if (File.Exists(filename))
+            {
+                _content = File.ReadAllBytes(filename);
+            }
+            else
+            {
+                throw new FileNotFoundException($"The file {filename} does not exist.");
+            }
         }
 
         public string GetHexaVerifier()
         {
-            string hexa = string.Empty;
+            int hexaVerifier = GetIntHexaVerifier();
+            string hexa = ToHexa(6, hexaVerifier);
+            hexa = hexa.Substring(0, 2) + ' ' + hexa.Substring(2, 2) + ' ' + hexa.Substring(4, 2);
+
+            return hexa;
+        }
+
+        public string Update(Save save)
+        {
+            UpdateContent(save.Funds, FUNDS_OFFSET, FUNDS_LENGTH);
+
+            Commit();
+
+            return GetHexaVerifier();
+        }
+
+        private void Commit()
+        {
+            // Must update Hexa Verifier before saving the file
+            UpdateContent(GetIntHexaVerifier(), HEXA_VERIFIER_OFFSET, HEXA_VERIFIER_LENGTH);
+
+            // Save the file
+            File.WriteAllBytes(_filename, _content);
+        }
+
+        private void UpdateContent(int newValue, int offset, int length)
+        {
+            byte[] byteChanged = BitConverter.GetBytes(newValue).Reverse().Skip(1).ToArray();
+            Array.Copy(byteChanged, 0, _content, offset, length);
+        }
+
+        private int GetIntHexaVerifier()
+        {
+            int resultado = 0;
             try
             {
-                int resultado = 0;
                 int startIndex = HEXA_VERIFIER_OFFSET + HEXA_VERIFIER_LENGTH;
                 for (int i = startIndex; i < _content.Length; i++)
                 {
-                    // Need to ReadByte to skip unnecessary byte
                     resultado += _content[i];
                 }
-                //using (FileStream fs = new FileStream(_filename, FileMode.Open, FileAccess.Read))
-                //{
-                //    int umByte;
-                //    for (int i = 0; i < fs.Length; i++)
-                //    {
-                //        // Need to ReadByte to skip unnecessary byte
-                //        umByte = fs.ReadByte();
-                //        if (i >= HEXA_VERIFIER_OFFSET)
-                //        {
-                //            resultado += umByte;
-                //        }
-                //    }
-                //}
 
                 // SRWF has 2 savegame types:
                 // 00 is for historycal things like how many robots/pilots you have already seen in the game
@@ -53,26 +81,13 @@ namespace Satoru.SRWF.Savegame.Service
                     // 01~99 needs to subtract (don't remember why although
                     resultado = resultado - 255 - 100;
                 }
-
-                // Convert integer as a hex in a string variable
-                hexa = ToHexa(6, resultado);
-                hexa = hexa.Substring(0, 2) + ' ' + hexa.Substring(2, 2) + ' ' + hexa.Substring(4, 2);
             }
             catch (IOException)
             {
 
             }
 
-            return hexa;
-        }
-
-        public string Update(Save save)
-        {
-            byte[] funds = BitConverter.GetBytes(save.Funds);
-            Array.Copy(funds, 0, _content, FUNDS_OFFSET, FUNDS_LENGTH);
-            File.WriteAllBytes(_filename, _content);
-
-            return GetHexaVerifier();
+            return resultado;
         }
 
         private int GetIntValue(int offset, int length)
@@ -110,7 +125,7 @@ namespace Satoru.SRWF.Savegame.Service
         /// Find Convert integer as a hex in a string variable
         /// </summary>
         /// <param name="offset">Where in the file the byte begins</param>
-        /// <param name="length">byte quantity will be read</param>
+        /// <param="length">byte quantity will be read</param>
         /// <returns></returns>
         private string GetHexaValue(int offset, int length)
         {

@@ -10,12 +10,10 @@ namespace Satoru.SRWF.Savegame.Service
 {
     public class Editor
     {
-        private readonly string _filename;
         private readonly SaveProvider _provider;
 
         public Editor(string filename)
         {
-            _filename = filename;
             _provider = new SaveProvider(filename);
         }
 
@@ -24,9 +22,9 @@ namespace Satoru.SRWF.Savegame.Service
             return _provider.GetHexaVerifier();
         }
 
-        public void Save(Save save)
+        public string Save(Save save)
         {
-            _provider.Update(save);
+            return _provider.Update(save);
         }
     }
 }

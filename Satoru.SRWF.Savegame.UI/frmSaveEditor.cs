@@ -12,12 +12,12 @@ namespace Satoru.SRWF.Savegame.UI
     public partial class frmSaveEditor : Form
     {
         private Editor _editor;
-        private string _filename = @"D:\Jogos\Saturn\SSF_PreviewVer_R33\Backup\InternalBackup\SROBOT_F_01.bin";
-        // TODO: Set _filename properly
+        private string _filename;
 
         public frmSaveEditor()
         {
             InitializeComponent();
+
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -26,19 +26,23 @@ namespace Satoru.SRWF.Savegame.UI
             {
                 Funds = (int)numFunds.Value
             };
-            _editor.Save(save);
+            txtHexa.Text = _editor.Save(save);
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // if File is selected, dr = OK and ofdFile_FileOk will be called
             DialogResult dr = ofdFile.ShowDialog();
+        }
+
+        private void btnOpenFolder_Click(object sender, EventArgs e)
+        {
+            Process.Start("explorer.exe", Path.GetDirectoryName(_filename));
         }
 
         private void ofdFile_FileOk(object sender, CancelEventArgs e)
         {
             SetSetting("lastFile", ofdFile.FileName);
-
-            //timFile.Enabled = true;
             OpenFile(ofdFile.FileName);
         }
 
@@ -67,9 +71,13 @@ namespace Satoru.SRWF.Savegame.UI
             RefreshSection("appSettings");
         }
 
-        private void btnOpenFolder_Click(object sender, EventArgs e)
+        private void frmSaveEditor_Load(object sender, EventArgs e)
         {
-            Process.Start("explorer.exe", Path.GetDirectoryName(_filename));
+            _filename = AppSettings.Get("lastFile");
+            lblStatus.Text = "";
+            btnOpenFolder.Enabled = false;
+
+            OpenFile(_filename);
         }
     }
 }

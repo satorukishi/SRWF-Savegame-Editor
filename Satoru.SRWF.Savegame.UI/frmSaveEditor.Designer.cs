@@ -28,7 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaveEditor));
+            this.statusBottom = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabChangeFunds = new System.Windows.Forms.TabPage();
@@ -40,7 +41,7 @@
             this.tabModifyPilot = new System.Windows.Forms.TabPage();
             this.tabAddPart = new System.Windows.Forms.TabPage();
             this.btnSave = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mnuTop = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,22 +49,22 @@
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.lblHexa = new System.Windows.Forms.Label();
             this.txtHexa = new System.Windows.Forms.TextBox();
-            this.statusStrip1.SuspendLayout();
+            this.statusBottom.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabChangeFunds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFunds)).BeginInit();
-            this.menuStrip1.SuspendLayout();
+            this.mnuTop.SuspendLayout();
             this.SuspendLayout();
             // 
-            // statusStrip1
+            // statusBottom
             // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.statusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 802);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1147, 22);
-            this.statusStrip1.TabIndex = 9;
-            this.statusStrip1.Text = "statusStrip1";
+            this.statusBottom.Location = new System.Drawing.Point(0, 802);
+            this.statusBottom.Name = "statusBottom";
+            this.statusBottom.Size = new System.Drawing.Size(1147, 22);
+            this.statusBottom.TabIndex = 9;
+            this.statusBottom.Text = "statusStrip1";
             // 
             // lblStatus
             // 
@@ -179,7 +180,7 @@
             // 
             this.btnSave.BackColor = System.Drawing.Color.PaleGreen;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSave.Location = new System.Drawing.Point(4, 752);
+            this.btnSave.Location = new System.Drawing.Point(433, 752);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(87, 36);
             this.btnSave.TabIndex = 11;
@@ -187,15 +188,15 @@
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // menuStrip1
+            // mnuTop
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mnuTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1147, 24);
-            this.menuStrip1.TabIndex = 12;
-            this.menuStrip1.Text = "menuStrip1";
+            this.mnuTop.Location = new System.Drawing.Point(0, 0);
+            this.mnuTop.Name = "mnuTop";
+            this.mnuTop.Size = new System.Drawing.Size(1147, 24);
+            this.mnuTop.TabIndex = 12;
+            this.mnuTop.Text = "menuStrip1";
             // 
             // fileToolStripMenuItem
             // 
@@ -210,14 +211,14 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
             // ofdFile
@@ -229,11 +230,11 @@
             // btnOpenFolder
             // 
             this.btnOpenFolder.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnOpenFolder.Location = new System.Drawing.Point(123, 752);
+            this.btnOpenFolder.Location = new System.Drawing.Point(5, 752);
             this.btnOpenFolder.Name = "btnOpenFolder";
             this.btnOpenFolder.Size = new System.Drawing.Size(111, 36);
             this.btnOpenFolder.TabIndex = 13;
-            this.btnOpenFolder.Text = "Open Folder";
+            this.btnOpenFolder.Text = "Open Savegame";
             this.btnOpenFolder.UseVisualStyleBackColor = true;
             this.btnOpenFolder.Click += new System.EventHandler(this.btnOpenFolder_Click);
             // 
@@ -241,7 +242,7 @@
             // 
             this.lblHexa.AutoSize = true;
             this.lblHexa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHexa.Location = new System.Drawing.Point(256, 762);
+            this.lblHexa.Location = new System.Drawing.Point(137, 762);
             this.lblHexa.Name = "lblHexa";
             this.lblHexa.Size = new System.Drawing.Size(87, 20);
             this.lblHexa.TabIndex = 15;
@@ -250,8 +251,9 @@
             // txtHexa
             // 
             this.txtHexa.Font = new System.Drawing.Font("Courier New", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtHexa.Location = new System.Drawing.Point(349, 759);
+            this.txtHexa.Location = new System.Drawing.Point(230, 756);
             this.txtHexa.Name = "txtHexa";
+            this.txtHexa.ReadOnly = true;
             this.txtHexa.Size = new System.Drawing.Size(175, 26);
             this.txtHexa.TabIndex = 14;
             // 
@@ -263,27 +265,29 @@
             this.Controls.Add(this.lblHexa);
             this.Controls.Add(this.txtHexa);
             this.Controls.Add(this.btnOpenFolder);
-            this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.mnuTop);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.tabControl1);
-            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.statusBottom);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSaveEditor";
             this.Text = "Sega Saturn\'s Savegame Editor";
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
+            this.Load += new System.EventHandler(this.frmSaveEditor_Load);
+            this.statusBottom.ResumeLayout(false);
+            this.statusBottom.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.tabChangeFunds.ResumeLayout(false);
             this.tabChangeFunds.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFunds)).EndInit();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mnuTop.ResumeLayout(false);
+            this.mnuTop.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.StatusStrip statusBottom;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabChangeFunds;
         private System.Windows.Forms.TabPage tabAddUnit;
@@ -295,7 +299,7 @@
         private System.Windows.Forms.ToolStripStatusLabel lblStatus;
         private System.Windows.Forms.NumericUpDown numFunds;
         private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mnuTop;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem openToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
