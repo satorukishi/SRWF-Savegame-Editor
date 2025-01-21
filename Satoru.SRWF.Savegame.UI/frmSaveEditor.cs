@@ -24,7 +24,9 @@ namespace Satoru.SRWF.Savegame.UI
         {
             Save save = new Save()
             {
-                Funds = (int)numFunds.Value
+                Funds = (int)numFunds.Value,
+                //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
+                //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
             };
             txtHexa.Text = _editor.Save(save);
         }
@@ -54,7 +56,18 @@ namespace Satoru.SRWF.Savegame.UI
                 btnOpenFolder.Enabled = true;
                 _filename = filename;
 
+                bool isFirstTime = _editor == null;
                 _editor = new Editor(filename);
+                
+                if (isFirstTime)
+                {
+                    cboUnit.DataSource = _editor.GetUnits();
+                    cboUnit.DisplayMember = "Name";
+                }
+                else
+                    _editor = new Editor(filename);
+
+
                 txtHexa.Text = _editor.GetHexaVerifier();
             }
             else
@@ -78,6 +91,11 @@ namespace Satoru.SRWF.Savegame.UI
             btnOpenFolder.Enabled = false;
 
             OpenFile(_filename);
+        }
+
+        private void cboUnit_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtUnitId.Text = ((Unit)cboUnit.SelectedItem).Id.ToString();
         }
     }
 }

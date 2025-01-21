@@ -4,5 +4,7 @@
     {
         public int Funds { get; set; }
 
+        public Unit Unit { get; set; }
+
     }
 }

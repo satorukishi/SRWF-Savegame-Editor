@@ -37,6 +37,10 @@
             this.lblFunds = new System.Windows.Forms.Label();
             this.tabAddUnit = new System.Windows.Forms.TabPage();
             this.tabModifyUnit = new System.Windows.Forms.TabPage();
+            this.txtUnitId = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.cboUnit = new System.Windows.Forms.ComboBox();
             this.tabAddPilot = new System.Windows.Forms.TabPage();
             this.tabModifyPilot = new System.Windows.Forms.TabPage();
             this.tabAddPart = new System.Windows.Forms.TabPage();
@@ -53,6 +57,7 @@
             this.tabControl1.SuspendLayout();
             this.tabChangeFunds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFunds)).BeginInit();
+            this.tabModifyUnit.SuspendLayout();
             this.mnuTop.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,12 +146,50 @@
             // 
             // tabModifyUnit
             // 
+            this.tabModifyUnit.Controls.Add(this.txtUnitId);
+            this.tabModifyUnit.Controls.Add(this.label2);
+            this.tabModifyUnit.Controls.Add(this.label1);
+            this.tabModifyUnit.Controls.Add(this.cboUnit);
             this.tabModifyUnit.Location = new System.Drawing.Point(4, 29);
             this.tabModifyUnit.Name = "tabModifyUnit";
             this.tabModifyUnit.Size = new System.Drawing.Size(1139, 686);
             this.tabModifyUnit.TabIndex = 3;
             this.tabModifyUnit.Text = "Modify Unit (ユニット)";
             this.tabModifyUnit.UseVisualStyleBackColor = true;
+            // 
+            // txtUnitId
+            // 
+            this.txtUnitId.Location = new System.Drawing.Point(137, 76);
+            this.txtUnitId.Name = "txtUnitId";
+            this.txtUnitId.Size = new System.Drawing.Size(216, 26);
+            this.txtUnitId.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(101, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ID:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(17, 21);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(114, 20);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Choose a Unit:";
+            // 
+            // cboUnit
+            // 
+            this.cboUnit.FormattingEnabled = true;
+            this.cboUnit.Location = new System.Drawing.Point(137, 13);
+            this.cboUnit.Name = "cboUnit";
+            this.cboUnit.Size = new System.Drawing.Size(216, 28);
+            this.cboUnit.TabIndex = 0;
+            this.cboUnit.SelectedIndexChanged += new System.EventHandler(this.cboUnit_SelectedIndexChanged);
             // 
             // tabAddPilot
             // 
@@ -211,14 +254,14 @@
             // 
             this.openToolStripMenuItem.Name = "openToolStripMenuItem";
             this.openToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
-            this.openToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.openToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.openToolStripMenuItem.Text = "&Open";
             this.openToolStripMenuItem.Click += new System.EventHandler(this.openToolStripMenuItem_Click);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.exitToolStripMenuItem.Text = "&Exit";
             // 
             // ofdFile
@@ -279,6 +322,8 @@
             this.tabChangeFunds.ResumeLayout(false);
             this.tabChangeFunds.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numFunds)).EndInit();
+            this.tabModifyUnit.ResumeLayout(false);
+            this.tabModifyUnit.PerformLayout();
             this.mnuTop.ResumeLayout(false);
             this.mnuTop.PerformLayout();
             this.ResumeLayout(false);
@@ -307,5 +352,9 @@
         private System.Windows.Forms.Button btnOpenFolder;
         private System.Windows.Forms.Label lblHexa;
         private System.Windows.Forms.TextBox txtHexa;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox cboUnit;
+        private System.Windows.Forms.TextBox txtUnitId;
+        private System.Windows.Forms.Label label2;
     }
 }

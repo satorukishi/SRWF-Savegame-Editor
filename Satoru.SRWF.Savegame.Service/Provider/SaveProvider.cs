@@ -1,7 +1,6 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
-using System.Management.Instrumentation;
 
 namespace Satoru.SRWF.Savegame.Service
 {
@@ -41,11 +40,13 @@ namespace Satoru.SRWF.Savegame.Service
         public string Update(Save save)
         {
             UpdateContent(save.Funds, FUNDS_OFFSET, FUNDS_LENGTH);
+            //UpdateContent(save.Unit.Id, , );
 
             Commit();
 
             return GetHexaVerifier();
         }
+
 
         private void Commit()
         {

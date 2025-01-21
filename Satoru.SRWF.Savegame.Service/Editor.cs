@@ -1,20 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace Satoru.SRWF.Savegame.Service
 {
     public class Editor
     {
-        private readonly SaveProvider _provider;
+        private readonly ISaveProvider _provider;
+        private readonly IUnitProviderCache _unitCache;
 
-        public Editor(string filename)
+        public Editor(string filename) : this(new SaveProvider(filename), new UnitProviderCache())
         {
-            _provider = new SaveProvider(filename);
+        }
+
+        public Editor(ISaveProvider provider, IUnitProviderCache unitCache)
+        {
+            _provider = provider;
+            _unitCache = unitCache;
         }
 
         public string GetHexaVerifier()
@@ -25,6 +25,11 @@ namespace Satoru.SRWF.Savegame.Service
         public string Save(Save save)
         {
             return _provider.Update(save);
+        }
+
+        public IEnumerable<Unit> GetUnits()
+        {
+            return _unitCache.GetUnits();
         }
     }
 }

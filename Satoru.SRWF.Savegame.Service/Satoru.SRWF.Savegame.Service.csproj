@@ -33,6 +33,11 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Linq, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Linq.4.3.0\lib\net463\System.Linq.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,10 +48,20 @@
   <ItemGroup>
     <Compile Include="Editor.cs" />
     <Compile Include="Entity\Save.cs" />
+    <Compile Include="Entity\Unit.cs" />
     <Compile Include="Interface\ISaveProvider.cs" />
+    <Compile Include="Interface\IUnitProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Interface\IUnitProviderCache.cs" />
     <Compile Include="Provider\SaveProvider.cs" />
+    <Compile Include="Provider\UnitProvider.cs" />
+    <Compile Include="Provider\UnitProviderCache.cs" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="units.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
