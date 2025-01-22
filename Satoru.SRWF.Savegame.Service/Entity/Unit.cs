@@ -6,7 +6,7 @@
         public string Hexa { get; set; }
         public string Name { get; set; }
         public string HP { get; set; }
-        public string Agility { get; set; }
+        public string Mobility { get; set; }
         public string Armor { get; set; }
         public string Limit { get; set; }
         public string Note { get; set; }

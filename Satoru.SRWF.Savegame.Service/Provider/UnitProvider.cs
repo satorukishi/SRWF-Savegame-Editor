@@ -10,7 +10,7 @@ namespace Satoru.SRWF.Savegame.Service
         private const int ID = 1;
         private const int NAME = 2;
         private const int HP = 3;
-        private const int AGILITY = 4;
+        private const int MOBILITY = 4;
         private const int ARMOR = 5;
         private const int LIMIT = 6;
         private const int NOTE = 7;
@@ -38,7 +38,7 @@ namespace Satoru.SRWF.Savegame.Service
                         Id = int.Parse(values[ID]),
                         Name = values[NAME],
                         HP = values[HP],
-                        Agility = values[AGILITY],
+                        Mobility = values[MOBILITY],
                         Armor = values[ARMOR],
                         Limit = values[LIMIT],
                         Note = values[NOTE]

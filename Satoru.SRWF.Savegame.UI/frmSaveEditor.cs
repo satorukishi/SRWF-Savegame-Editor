@@ -24,7 +24,7 @@ namespace Satoru.SRWF.Savegame.UI
         {
             Save save = new Save()
             {
-                Funds = (int)numFunds.Value,
+                Funds = (int)numCFFunds.Value,
                 //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
                 //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
             };
@@ -61,8 +61,8 @@ namespace Satoru.SRWF.Savegame.UI
                 
                 if (isFirstTime)
                 {
-                    cboUnit.DataSource = _editor.GetUnits();
-                    cboUnit.DisplayMember = "Name";
+                    cboMUUnit.DataSource = _editor.GetUnits();
+                    cboMUUnit.DisplayMember = "Name";
                 }
                 else
                     _editor = new Editor(filename);
@@ -95,7 +95,18 @@ namespace Satoru.SRWF.Savegame.UI
 
         private void cboUnit_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtUnitId.Text = ((Unit)cboUnit.SelectedItem).Id.ToString();
+            if (cboMUUnit.SelectedItem != null)
+            {
+                var unit = (Unit)cboMUUnit.SelectedItem;
+                grpMUUnit.Text = unit.Name;
+                txtMUId.Text = unit.Id.ToString();
+                txtMUHexa.Text = unit.Hexa;
+                txtMUHP.Text = unit.HP;
+                txtMUMobility.Text = unit.Mobility;
+                txtMUArmor.Text = unit.Armor;
+                txtMULimit.Text = unit.Limit;
+                txtMUNote.Text = unit.Note;
+            }
         }
     }
 }
