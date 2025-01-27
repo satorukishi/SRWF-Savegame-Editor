@@ -226,10 +226,10 @@
 00E5;229;Greidon;28000;80;2200;300;
 00E6;230;Gunbuster;16000;110;2400;340;
 00E7;231;Exelion;35000;80;2200;290;
-00E8;232;Eva???;3900;85;1000;320;
-00E9;233;Eva???;4200;90;1000;320;
-00EA;234;Eva???;4100;95;1000;340;
-00EB;235;Eva???;4200;130;1000;360;
+00E8;232;Eva 00;3900;85;1000;320;
+00E9;233;Eva 02;4200;90;1000;320;
+00EA;234;Eva 01;4100;95;1000;340;
+00EB;235;Eva 03;4200;130;1000;360;
 00EC;236;Ideon;19000;110;2500;440;
 00ED;237;Soro Ship;21000;80;1800;290;
 00EE;238;Jig Makk;10000;90;1700;330;
@@ -312,8 +312,8 @@
 013B;315;King Arrow;2300;70;100;100;what is this??
 013C;316;Jack Knight;2300;70;100;100;uses graphics for Gundam
 013D;317;Queen Rose;2300;70;100;100;?
-013E;318;Eva???;4100;135;1000;380;Berserk Eva unit 1
-013F;319;Geshpenst mkII (Super Robot);6500;95;1600;310;super robot version
+013E;318;Eva 01 (Berserk);4100;135;1000;380;Berserk Eva unit 1
+013F;319;Geshpenst mkII (Super Robot);6500;95;1600;310;Super Robot Version
 0140;320;Getta Dragon;5000;60;1100;250;
 0141;321;Boss Borot (Upgraded);3700;45;900;200;upgraded version
 0142;322;Asshimaa;13500;155;2600;390;
@@ -351,12 +351,12 @@
 0162;354;Wing Carrier;3300;100;700;370;
 0163;355;Bau MS;6700;145;2300;390;green
 0164;356;Bau MA;6700;140;2200;380;
-0165;357;Master Gundam(??) (Unicorn);30000;130;3000;380;riding the unicorn
-0166;358;God Gundam(??) (Unicorn);6500;105;1500;350;riding the unicorn!
+0165;357;Master Gundam (Unicorn);30000;130;3000;380;riding the unicorn
+0166;358;God Gundam (Unicorn);6500;105;1500;350;riding the unicorn!
 0167;359;Grand Master Gundam;30000;110;3500;380;
 0168;360;Near Ahgama;11000;60;1200;260;
 0169;361;Master Gundam;7000;120;1800;360;
-0170;368;God Gundam(??) (Unicorn);8500;105;1800;350;riding the unicorn!
+0170;368;God Gundam (Unicorn);8500;105;1800;350;riding the unicorn!
 0177;375;Gaza C;11000;;;;
 0178;376;Gaza C MA;11000;145;1500;370;
 0179;377;Gaza D;14000;160;1600;390;doesn't look familiar
