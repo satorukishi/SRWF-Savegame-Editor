@@ -7,3 +7,8 @@ Sega Saturn's Super Robot Wars F was released on [September 25, 1997]([url](http
 Note that this game has 2 different savegames:
 * SROBOT_F_00.bin - Saves a history of all seen unit/pilot, karaoke, etc.
 * SROBOT_F_01.bin - Saves your progress and that's the file this editor works.
+
+# How to Use
+Start by opening a SROBOT_F_01.bin file
+Make all desired changes and click Save button to apply.
+![image](https://github.com/user-attachments/assets/2f8b009c-c42e-4392-ae3e-65ac251e9892)
