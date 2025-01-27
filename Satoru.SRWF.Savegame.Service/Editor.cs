@@ -31,5 +31,12 @@ namespace Satoru.SRWF.Savegame.Service
         {
             return _unitCache.GetUnits();
         }
+
+        public IEnumerable<Unit> GetUnlockedUnits()
+        {
+            return _provider.GetUnlockedUnits();
+        }
+
+        
     }
 }

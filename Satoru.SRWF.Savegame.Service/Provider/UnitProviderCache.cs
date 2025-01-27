@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace Satoru.SRWF.Savegame.Service
 {
@@ -18,6 +19,11 @@ namespace Satoru.SRWF.Savegame.Service
             }
 
             return _cache[UNITS];
+        }
+
+        public Unit GetUnitById(int unitId)
+        {
+            return GetUnits().FirstOrDefault(x => x.Id == unitId);
         }
     }
 }

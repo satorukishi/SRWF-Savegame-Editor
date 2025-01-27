@@ -25,8 +25,7 @@ namespace Satoru.SRWF.Savegame.UI
             Save save = new Save()
             {
                 Funds = (int)numCFFunds.Value,
-                //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
-                //Unit = new Unit() { Id = (int)cboUnit.SelectedValue }
+                Unit = (Unit)cboMUUnit.SelectedValue
             };
             txtHexa.Text = _editor.Save(save);
         }
@@ -58,15 +57,12 @@ namespace Satoru.SRWF.Savegame.UI
 
                 bool isFirstTime = _editor == null;
                 _editor = new Editor(filename);
-                
+
                 if (isFirstTime)
                 {
-                    cboMUUnit.DataSource = _editor.GetUnits();
+                    cboMUUnit.DataSource = _editor.GetUnlockedUnits();
                     cboMUUnit.DisplayMember = "Name";
                 }
-                else
-                    _editor = new Editor(filename);
-
 
                 txtHexa.Text = _editor.GetHexaVerifier();
             }

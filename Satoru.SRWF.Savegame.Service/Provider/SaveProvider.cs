@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
@@ -6,17 +7,20 @@ namespace Satoru.SRWF.Savegame.Service
 {
     internal class SaveProvider : ISaveProvider
     {
-        private const int HEXA_VERIFIER_OFFSET = 17;
+        private readonly IUnitProviderCache _unitCache;
+        private const int HEXA_VERIFIER_OFFSET = 0x11;
         private const int HEXA_VERIFIER_LENGTH = 3;
-        private const int FUNDS_OFFSET = 26;
+        private const int FUNDS_OFFSET = 0x1A;
         private const int FUNDS_LENGTH = 3;
+
 
         private string _filename;
         private byte[] _content;
 
-        public SaveProvider(string filename)
+        public SaveProvider(string filename, IUnitProviderCache unitCache)
         {
             _filename = filename;
+            _unitCache = unitCache;
 
             if (File.Exists(filename))
             {
@@ -26,6 +30,11 @@ namespace Satoru.SRWF.Savegame.Service
             {
                 throw new FileNotFoundException($"The file {filename} does not exist.");
             }
+
+        }
+
+        public SaveProvider(string filename) : this(filename,new UnitProviderCache())
+        {
         }
 
         public string GetHexaVerifier()
@@ -45,6 +54,36 @@ namespace Satoru.SRWF.Savegame.Service
             Commit();
 
             return GetHexaVerifier();
+        }
+
+        public IEnumerable<Unit> GetUnlockedUnits()
+        {
+            List<Unit> units = new List<Unit>();
+            int offset = UnitUnlocked.START_INDEX;
+            int unitId;
+            bool retry = true;
+
+            do
+            {
+                unitId = GetIntValue(offset, 2);
+                offset += UnitUnlocked.LENGTH;
+                if (unitId > 0)
+                {
+                    Unit unit = _unitCache.GetUnitById(unitId);
+                    unit.Offset = offset;
+                    units.Add(unit);
+                }
+                else
+                {
+                    // If unitId is 0, we check if next 2 bytes are 0 too
+                    unitId = GetIntValue(offset, 4);
+                    retry = unitId != 0;
+                }
+
+
+            } while (unitId > 0 || retry);
+
+            return units;
         }
 
 
@@ -79,7 +118,7 @@ namespace Satoru.SRWF.Savegame.Service
                 // 01~99 are used to store which stage you are, money, robots/pilots you have been leveled up, etc.
                 if (_filename.Substring(_filename.Length - 6, 2) != "00")
                 {
-                    // 01~99 needs to subtract (don't remember why although
+                    // 01~99 needs to subtract (don't remember why)
                     resultado = resultado - 255 - 100;
                 }
             }
@@ -143,6 +182,36 @@ namespace Satoru.SRWF.Savegame.Service
         {
             string hexa = intValue.ToString("X").PadLeft(padLeft, '0');
             return hexa;
+        }
+
+
+        private class UnitUnlocked
+        {
+            internal const int START_INDEX = 0x110;
+            internal const int LENGTH = 30;
+            internal const int HP_EN_INDEX = 5;
+            internal const int MOBILITY_INDEX = 7;
+            internal const int ARMOR_LIMIT_INDEX = 6;
+
+            // HP, Mobility, Armor
+            internal static readonly Dictionary<int, byte> UPGRADE_TYPE1 = new Dictionary<int, byte>()
+            {
+                {1, 0x80},
+                {2, 0x80},
+                {3, 0x80},
+                {4, 0x80},
+                {5, 0x80},
+            };
+
+            // EN, Limit
+            internal static readonly Dictionary<int, byte> UPGRADE_TYPE2 = new Dictionary<int, byte>()
+            {
+                {1, 0x08},
+                {2, 0x08},
+                {3, 0x08},
+                {4, 0x08},
+                {5, 0x08},
+            };
         }
     }
 }
