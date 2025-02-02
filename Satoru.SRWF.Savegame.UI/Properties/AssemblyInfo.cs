@@ -5,12 +5,12 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Sega Saturn's Savegame Editor")]
+[assembly: AssemblyTitle("Sega Saturn's Super Robot Wars F Savegame Editor")]
 [assembly: AssemblyDescription("Edit your savegame to add more possibilities to Super Robot Wars F & Super Robot Wars F Final like more money, infinity parts, Amuro as a pilot of Evangelion, etc.")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Satoru Kishi")]
 [assembly: AssemblyProduct("Sega Saturn's Savegame Editor")]
-[assembly: AssemblyCopyright("Copyright ©  2021")]
+[assembly: AssemblyCopyright("Copyright ©  2025")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

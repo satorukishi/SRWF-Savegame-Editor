@@ -104,5 +104,38 @@ namespace Satoru.SRWF.Savegame.UI
                 txtMUNote.Text = unit.Note;
             }
         }
+
+        private void txtMU_GotFocus(object sender, EventArgs e)
+        {
+            TextBox txt = (TextBox)sender;
+
+            picMUHp.Visible = picMUMobility.Visible = picMUArmor.Visible = picMULimit.Visible = false;
+            
+            switch (txt.Name.Substring(5))
+            {
+                case "HP":
+                    picMUHp.Visible = true;
+                    break;
+                case "Mobility":
+                    picMUMobility.Visible = true;
+                    break;
+                case "Armor":
+                    picMUArmor.Visible = true;
+                    break;
+                case "Limit":
+                    picMULimit.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
+        private enum UnitAttribute
+        {
+            HP,
+            Mobility,
+            Armor,
+            Limit
+        }
     }
 }

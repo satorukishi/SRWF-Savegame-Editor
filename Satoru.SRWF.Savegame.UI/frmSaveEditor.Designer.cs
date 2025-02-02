@@ -1,4 +1,6 @@
-﻿namespace Satoru.SRWF.Savegame.UI
+﻿using System;
+
+namespace Satoru.SRWF.Savegame.UI
 {
     partial class frmSaveEditor
     {
@@ -38,6 +40,20 @@
             this.tabAddUnit = new System.Windows.Forms.TabPage();
             this.tabModifyUnit = new System.Windows.Forms.TabPage();
             this.grpMUUnit = new System.Windows.Forms.GroupBox();
+            this.picMUHp = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtMUNote = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtMULimit = new System.Windows.Forms.TextBox();
+            this.txtMUArmor = new System.Windows.Forms.TextBox();
+            this.txtMUMobility = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMUHP = new System.Windows.Forms.TextBox();
+            this.txtMUHexa = new System.Windows.Forms.TextBox();
+            this.txtMUId = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             this.picMU = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,36 +71,31 @@
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.lblHexa = new System.Windows.Forms.Label();
             this.txtHexa = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtMUId = new System.Windows.Forms.TextBox();
-            this.txtMUHexa = new System.Windows.Forms.TextBox();
-            this.txtMUHP = new System.Windows.Forms.TextBox();
-            this.txtMULimit = new System.Windows.Forms.TextBox();
-            this.txtMUArmor = new System.Windows.Forms.TextBox();
-            this.txtMUMobility = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMUNote = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
+            this.picMUMobility = new System.Windows.Forms.PictureBox();
+            this.picMULimit = new System.Windows.Forms.PictureBox();
+            this.picMUArmor = new System.Windows.Forms.PictureBox();
             this.statusBottom.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabChangeFunds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCFFunds)).BeginInit();
             this.tabModifyUnit.SuspendLayout();
             this.grpMUUnit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMU)).BeginInit();
             this.mnuTop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).BeginInit();
             this.SuspendLayout();
             // 
             // statusBottom
             // 
+            this.statusBottom.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.statusBottom.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.lblStatus});
             this.statusBottom.Location = new System.Drawing.Point(0, 802);
             this.statusBottom.Name = "statusBottom";
-            this.statusBottom.Size = new System.Drawing.Size(1147, 22);
+            this.statusBottom.Size = new System.Drawing.Size(1043, 22);
             this.statusBottom.TabIndex = 9;
             this.statusBottom.Text = "statusStrip1";
             // 
@@ -110,7 +121,7 @@
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.Padding = new System.Drawing.Point(0, 0);
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1147, 719);
+            this.tabControl1.Size = new System.Drawing.Size(1043, 719);
             this.tabControl1.TabIndex = 10;
             // 
             // tabChangeFunds
@@ -120,7 +131,7 @@
             this.tabChangeFunds.Location = new System.Drawing.Point(4, 29);
             this.tabChangeFunds.Name = "tabChangeFunds";
             this.tabChangeFunds.Padding = new System.Windows.Forms.Padding(3);
-            this.tabChangeFunds.Size = new System.Drawing.Size(1139, 686);
+            this.tabChangeFunds.Size = new System.Drawing.Size(1035, 686);
             this.tabChangeFunds.TabIndex = 0;
             this.tabChangeFunds.Text = "Change Funds (資金)";
             this.tabChangeFunds.UseVisualStyleBackColor = true;
@@ -156,7 +167,7 @@
             this.tabAddUnit.Location = new System.Drawing.Point(4, 29);
             this.tabAddUnit.Name = "tabAddUnit";
             this.tabAddUnit.Padding = new System.Windows.Forms.Padding(3);
-            this.tabAddUnit.Size = new System.Drawing.Size(1139, 686);
+            this.tabAddUnit.Size = new System.Drawing.Size(1035, 686);
             this.tabAddUnit.TabIndex = 1;
             this.tabAddUnit.Text = "Add Unit (ユニット)";
             this.tabAddUnit.UseVisualStyleBackColor = true;
@@ -168,13 +179,17 @@
             this.tabModifyUnit.Controls.Add(this.cboMUUnit);
             this.tabModifyUnit.Location = new System.Drawing.Point(4, 29);
             this.tabModifyUnit.Name = "tabModifyUnit";
-            this.tabModifyUnit.Size = new System.Drawing.Size(1139, 686);
+            this.tabModifyUnit.Size = new System.Drawing.Size(1035, 686);
             this.tabModifyUnit.TabIndex = 3;
             this.tabModifyUnit.Text = "Modify Unit (ユニット)";
             this.tabModifyUnit.UseVisualStyleBackColor = true;
             // 
             // grpMUUnit
             // 
+            this.grpMUUnit.Controls.Add(this.picMULimit);
+            this.grpMUUnit.Controls.Add(this.picMUArmor);
+            this.grpMUUnit.Controls.Add(this.picMUMobility);
+            this.grpMUUnit.Controls.Add(this.picMUHp);
             this.grpMUUnit.Controls.Add(this.label9);
             this.grpMUUnit.Controls.Add(this.txtMUNote);
             this.grpMUUnit.Controls.Add(this.label8);
@@ -198,6 +213,128 @@
             this.grpMUUnit.TabStop = false;
             this.grpMUUnit.Text = "Unit";
             // 
+            // picMUHp
+            // 
+            this.picMUHp.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_hp;
+            this.picMUHp.Location = new System.Drawing.Point(712, 126);
+            this.picMUHp.Name = "picMUHp";
+            this.picMUHp.Size = new System.Drawing.Size(65, 13);
+            this.picMUHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUHp.TabIndex = 22;
+            this.picMUHp.TabStop = false;
+            this.picMUHp.Visible = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(807, 207);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 17);
+            this.label9.TabIndex = 21;
+            this.label9.Text = "Sample";
+            // 
+            // txtMUNote
+            // 
+            this.txtMUNote.Location = new System.Drawing.Point(147, 88);
+            this.txtMUNote.Name = "txtMUNote";
+            this.txtMUNote.ReadOnly = true;
+            this.txtMUNote.Size = new System.Drawing.Size(322, 26);
+            this.txtMUNote.TabIndex = 20;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(89, 91);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Note:";
+            // 
+            // txtMULimit
+            // 
+            this.txtMULimit.Location = new System.Drawing.Point(580, 55);
+            this.txtMULimit.Name = "txtMULimit";
+            this.txtMULimit.ReadOnly = true;
+            this.txtMULimit.Size = new System.Drawing.Size(100, 26);
+            this.txtMULimit.TabIndex = 18;
+            // 
+            // txtMUArmor
+            // 
+            this.txtMUArmor.Location = new System.Drawing.Point(369, 54);
+            this.txtMUArmor.Name = "txtMUArmor";
+            this.txtMUArmor.ReadOnly = true;
+            this.txtMUArmor.Size = new System.Drawing.Size(100, 26);
+            this.txtMUArmor.TabIndex = 17;
+            // 
+            // txtMUMobility
+            // 
+            this.txtMUMobility.Location = new System.Drawing.Point(147, 55);
+            this.txtMUMobility.Name = "txtMUMobility";
+            this.txtMUMobility.ReadOnly = true;
+            this.txtMUMobility.Size = new System.Drawing.Size(100, 26);
+            this.txtMUMobility.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(482, 58);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Limit (限界):";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(263, 58);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Armor (装甲):";
+            // 
+            // txtMUHP
+            // 
+            this.txtMUHP.Location = new System.Drawing.Point(580, 22);
+            this.txtMUHP.Name = "txtMUHP";
+            this.txtMUHP.ReadOnly = true;
+            this.txtMUHP.Size = new System.Drawing.Size(100, 26);
+            this.txtMUHP.TabIndex = 13;
+            // 
+            // txtMUHexa
+            // 
+            this.txtMUHexa.Location = new System.Drawing.Point(369, 22);
+            this.txtMUHexa.Name = "txtMUHexa";
+            this.txtMUHexa.ReadOnly = true;
+            this.txtMUHexa.Size = new System.Drawing.Size(100, 26);
+            this.txtMUHexa.TabIndex = 12;
+            // 
+            // txtMUId
+            // 
+            this.txtMUId.Location = new System.Drawing.Point(147, 22);
+            this.txtMUId.Name = "txtMUId";
+            this.txtMUId.ReadOnly = true;
+            this.txtMUId.Size = new System.Drawing.Size(100, 26);
+            this.txtMUId.TabIndex = 11;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(9, 58);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(127, 20);
+            this.label6.TabIndex = 10;
+            this.label6.Text = "Mobility (運動性):";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(539, 28);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "HP:";
+            // 
             // picMU
             // 
             this.picMU.AccessibleName = "Modify Unit - Sample Picture";
@@ -206,8 +343,8 @@
             this.picMU.InitialImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
             this.picMU.Location = new System.Drawing.Point(699, 22);
             this.picMU.Name = "picMU";
-            this.picMU.Size = new System.Drawing.Size(252, 189);
-            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.picMU.Size = new System.Drawing.Size(260, 182);
+            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picMU.TabIndex = 8;
             this.picMU.TabStop = false;
             // 
@@ -251,7 +388,7 @@
             // 
             this.tabAddPilot.Location = new System.Drawing.Point(4, 29);
             this.tabAddPilot.Name = "tabAddPilot";
-            this.tabAddPilot.Size = new System.Drawing.Size(1139, 686);
+            this.tabAddPilot.Size = new System.Drawing.Size(1035, 686);
             this.tabAddPilot.TabIndex = 2;
             this.tabAddPilot.Text = "Add Pilot (パイロット)";
             this.tabAddPilot.UseVisualStyleBackColor = true;
@@ -260,7 +397,7 @@
             // 
             this.tabModifyPilot.Location = new System.Drawing.Point(4, 29);
             this.tabModifyPilot.Name = "tabModifyPilot";
-            this.tabModifyPilot.Size = new System.Drawing.Size(1139, 686);
+            this.tabModifyPilot.Size = new System.Drawing.Size(1035, 686);
             this.tabModifyPilot.TabIndex = 4;
             this.tabModifyPilot.Text = "Modify Pilot (パイロット)";
             this.tabModifyPilot.UseVisualStyleBackColor = true;
@@ -270,7 +407,7 @@
             this.tabAddPart.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabAddPart.Location = new System.Drawing.Point(4, 29);
             this.tabAddPart.Name = "tabAddPart";
-            this.tabAddPart.Size = new System.Drawing.Size(1139, 686);
+            this.tabAddPart.Size = new System.Drawing.Size(1035, 686);
             this.tabAddPart.TabIndex = 5;
             this.tabAddPart.Text = "Add Reinforcement Parts (強化パーツ)";
             this.tabAddPart.UseVisualStyleBackColor = true;
@@ -289,11 +426,12 @@
             // 
             // mnuTop
             // 
+            this.mnuTop.ImageScalingSize = new System.Drawing.Size(36, 36);
             this.mnuTop.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem});
             this.mnuTop.Location = new System.Drawing.Point(0, 0);
             this.mnuTop.Name = "mnuTop";
-            this.mnuTop.Size = new System.Drawing.Size(1147, 24);
+            this.mnuTop.Size = new System.Drawing.Size(1043, 24);
             this.mnuTop.TabIndex = 12;
             this.mnuTop.Text = "menuStrip1";
             // 
@@ -356,122 +494,44 @@
             this.txtHexa.Size = new System.Drawing.Size(175, 26);
             this.txtHexa.TabIndex = 14;
             // 
-            // label6
+            // picMUMobility
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 58);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(127, 20);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Mobility (運動性):";
+            this.picMUMobility.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_mobility;
+            this.picMUMobility.Location = new System.Drawing.Point(712, 152);
+            this.picMUMobility.Name = "picMUMobility";
+            this.picMUMobility.Size = new System.Drawing.Size(65, 13);
+            this.picMUMobility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUMobility.TabIndex = 23;
+            this.picMUMobility.TabStop = false;
+            this.picMUMobility.Visible = false;
             // 
-            // label7
+            // picMULimit
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(539, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "HP:";
+            this.picMULimit.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_limit;
+            this.picMULimit.Location = new System.Drawing.Point(712, 178);
+            this.picMULimit.Name = "picMULimit";
+            this.picMULimit.Size = new System.Drawing.Size(65, 13);
+            this.picMULimit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMULimit.TabIndex = 25;
+            this.picMULimit.TabStop = false;
+            this.picMULimit.Visible = false;
             // 
-            // txtMUId
+            // picMUArmor
             // 
-            this.txtMUId.Location = new System.Drawing.Point(147, 22);
-            this.txtMUId.Name = "txtMUId";
-            this.txtMUId.ReadOnly = true;
-            this.txtMUId.Size = new System.Drawing.Size(100, 26);
-            this.txtMUId.TabIndex = 11;
-            // 
-            // txtMUHexa
-            // 
-            this.txtMUHexa.Location = new System.Drawing.Point(369, 22);
-            this.txtMUHexa.Name = "txtMUHexa";
-            this.txtMUHexa.ReadOnly = true;
-            this.txtMUHexa.Size = new System.Drawing.Size(100, 26);
-            this.txtMUHexa.TabIndex = 12;
-            // 
-            // txtMUHP
-            // 
-            this.txtMUHP.Location = new System.Drawing.Point(580, 22);
-            this.txtMUHP.Name = "txtMUHP";
-            this.txtMUHP.ReadOnly = true;
-            this.txtMUHP.Size = new System.Drawing.Size(100, 26);
-            this.txtMUHP.TabIndex = 13;
-            // 
-            // txtMULimit
-            // 
-            this.txtMULimit.Location = new System.Drawing.Point(580, 55);
-            this.txtMULimit.Name = "txtMULimit";
-            this.txtMULimit.ReadOnly = true;
-            this.txtMULimit.Size = new System.Drawing.Size(100, 26);
-            this.txtMULimit.TabIndex = 18;
-            // 
-            // txtMUArmor
-            // 
-            this.txtMUArmor.Location = new System.Drawing.Point(369, 54);
-            this.txtMUArmor.Name = "txtMUArmor";
-            this.txtMUArmor.ReadOnly = true;
-            this.txtMUArmor.Size = new System.Drawing.Size(100, 26);
-            this.txtMUArmor.TabIndex = 17;
-            // 
-            // txtMUMobility
-            // 
-            this.txtMUMobility.Location = new System.Drawing.Point(147, 55);
-            this.txtMUMobility.Name = "txtMUMobility";
-            this.txtMUMobility.ReadOnly = true;
-            this.txtMUMobility.Size = new System.Drawing.Size(100, 26);
-            this.txtMUMobility.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(482, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Limit (限界):";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 20);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Armor (装甲):";
-            // 
-            // txtMUNote
-            // 
-            this.txtMUNote.Location = new System.Drawing.Point(147, 88);
-            this.txtMUNote.Name = "txtMUNote";
-            this.txtMUNote.ReadOnly = true;
-            this.txtMUNote.Size = new System.Drawing.Size(322, 26);
-            this.txtMUNote.TabIndex = 20;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(89, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Note:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(799, 214);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 17);
-            this.label9.TabIndex = 21;
-            this.label9.Text = "Sample";
+            this.picMUArmor.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_armor;
+            this.picMUArmor.Location = new System.Drawing.Point(712, 165);
+            this.picMUArmor.Name = "picMUArmor";
+            this.picMUArmor.Size = new System.Drawing.Size(65, 13);
+            this.picMUArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUArmor.TabIndex = 24;
+            this.picMUArmor.TabStop = false;
+            this.picMUArmor.Visible = false;
             // 
             // frmSaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1147, 824);
+            this.ClientSize = new System.Drawing.Size(1043, 824);
             this.Controls.Add(this.lblHexa);
             this.Controls.Add(this.txtHexa);
             this.Controls.Add(this.btnOpenFolder);
@@ -493,12 +553,23 @@
             this.tabModifyUnit.PerformLayout();
             this.grpMUUnit.ResumeLayout(false);
             this.grpMUUnit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMU)).EndInit();
             this.mnuTop.ResumeLayout(false);
             this.mnuTop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
+            this.txtMUId.GotFocus += txtMU_GotFocus;
+            this.txtMUHexa.GotFocus += txtMU_GotFocus;
+            this.txtMUHP.GotFocus += txtMU_GotFocus;
+            this.txtMUMobility.GotFocus += txtMU_GotFocus;
+            this.txtMUArmor.GotFocus += txtMU_GotFocus;
+            this.txtMULimit.GotFocus += txtMU_GotFocus;
+            this.txtMUNote.GotFocus += txtMU_GotFocus;
         }
 
         #endregion
@@ -541,5 +612,9 @@
         private System.Windows.Forms.TextBox txtMUNote;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.PictureBox picMUHp;
+        private System.Windows.Forms.PictureBox picMUMobility;
+        private System.Windows.Forms.PictureBox picMULimit;
+        private System.Windows.Forms.PictureBox picMUArmor;
     }
 }
