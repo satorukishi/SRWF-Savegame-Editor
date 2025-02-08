@@ -33,14 +33,13 @@ namespace Satoru.SRWF.Savegame.UI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmSaveEditor));
             this.statusBottom = new System.Windows.Forms.StatusStrip();
             this.lblStatus = new System.Windows.Forms.ToolStripStatusLabel();
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabEditor = new System.Windows.Forms.TabControl();
             this.tabChangeFunds = new System.Windows.Forms.TabPage();
             this.numCFFunds = new System.Windows.Forms.NumericUpDown();
             this.lblFunds = new System.Windows.Forms.Label();
             this.tabAddUnit = new System.Windows.Forms.TabPage();
             this.tabModifyUnit = new System.Windows.Forms.TabPage();
             this.grpMUUnit = new System.Windows.Forms.GroupBox();
-            this.picMUHp = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtMUNote = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -54,7 +53,6 @@ namespace Satoru.SRWF.Savegame.UI
             this.txtMUId = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.picMU = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -71,21 +69,28 @@ namespace Satoru.SRWF.Savegame.UI
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.lblHexa = new System.Windows.Forms.Label();
             this.txtHexa = new System.Windows.Forms.TextBox();
-            this.picMUMobility = new System.Windows.Forms.PictureBox();
             this.picMULimit = new System.Windows.Forms.PictureBox();
             this.picMUArmor = new System.Windows.Forms.PictureBox();
+            this.picMUMobility = new System.Windows.Forms.PictureBox();
+            this.picMUHp = new System.Windows.Forms.PictureBox();
+            this.picMU = new System.Windows.Forms.PictureBox();
+            this.picMUEn = new System.Windows.Forms.PictureBox();
+            this.grpMUUnitStats = new System.Windows.Forms.GroupBox();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.statusBottom.SuspendLayout();
-            this.tabControl1.SuspendLayout();
+            this.tabEditor.SuspendLayout();
             this.tabChangeFunds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCFFunds)).BeginInit();
             this.tabModifyUnit.SuspendLayout();
             this.grpMUUnit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMU)).BeginInit();
             this.mnuTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).BeginInit();
+            this.grpMUUnitStats.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusBottom
@@ -105,24 +110,24 @@ namespace Satoru.SRWF.Savegame.UI
             this.lblStatus.Size = new System.Drawing.Size(52, 17);
             this.lblStatus.Text = "lblStatus";
             // 
-            // tabControl1
+            // tabEditor
             // 
-            this.tabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.tabEditor.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl1.Controls.Add(this.tabChangeFunds);
-            this.tabControl1.Controls.Add(this.tabAddUnit);
-            this.tabControl1.Controls.Add(this.tabModifyUnit);
-            this.tabControl1.Controls.Add(this.tabAddPilot);
-            this.tabControl1.Controls.Add(this.tabModifyPilot);
-            this.tabControl1.Controls.Add(this.tabAddPart);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControl1.Location = new System.Drawing.Point(0, 27);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.Padding = new System.Drawing.Point(0, 0);
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1043, 719);
-            this.tabControl1.TabIndex = 10;
+            this.tabEditor.Controls.Add(this.tabChangeFunds);
+            this.tabEditor.Controls.Add(this.tabAddUnit);
+            this.tabEditor.Controls.Add(this.tabModifyUnit);
+            this.tabEditor.Controls.Add(this.tabAddPilot);
+            this.tabEditor.Controls.Add(this.tabModifyPilot);
+            this.tabEditor.Controls.Add(this.tabAddPart);
+            this.tabEditor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabEditor.Location = new System.Drawing.Point(0, 27);
+            this.tabEditor.Name = "tabEditor";
+            this.tabEditor.Padding = new System.Drawing.Point(0, 0);
+            this.tabEditor.SelectedIndex = 0;
+            this.tabEditor.Size = new System.Drawing.Size(1043, 719);
+            this.tabEditor.TabIndex = 10;
             // 
             // tabChangeFunds
             // 
@@ -174,6 +179,7 @@ namespace Satoru.SRWF.Savegame.UI
             // 
             // tabModifyUnit
             // 
+            this.tabModifyUnit.Controls.Add(this.grpMUUnitStats);
             this.tabModifyUnit.Controls.Add(this.grpMUUnit);
             this.tabModifyUnit.Controls.Add(this.label1);
             this.tabModifyUnit.Controls.Add(this.cboMUUnit);
@@ -186,6 +192,7 @@ namespace Satoru.SRWF.Savegame.UI
             // 
             // grpMUUnit
             // 
+            this.grpMUUnit.Controls.Add(this.picMUEn);
             this.grpMUUnit.Controls.Add(this.picMULimit);
             this.grpMUUnit.Controls.Add(this.picMUArmor);
             this.grpMUUnit.Controls.Add(this.picMUMobility);
@@ -208,21 +215,10 @@ namespace Satoru.SRWF.Savegame.UI
             this.grpMUUnit.Controls.Add(this.label2);
             this.grpMUUnit.Location = new System.Drawing.Point(8, 43);
             this.grpMUUnit.Name = "grpMUUnit";
-            this.grpMUUnit.Size = new System.Drawing.Size(1123, 241);
+            this.grpMUUnit.Size = new System.Drawing.Size(1019, 231);
             this.grpMUUnit.TabIndex = 4;
             this.grpMUUnit.TabStop = false;
             this.grpMUUnit.Text = "Unit";
-            // 
-            // picMUHp
-            // 
-            this.picMUHp.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_hp;
-            this.picMUHp.Location = new System.Drawing.Point(712, 126);
-            this.picMUHp.Name = "picMUHp";
-            this.picMUHp.Size = new System.Drawing.Size(65, 13);
-            this.picMUHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUHp.TabIndex = 22;
-            this.picMUHp.TabStop = false;
-            this.picMUHp.Visible = false;
             // 
             // label9
             // 
@@ -334,19 +330,6 @@ namespace Satoru.SRWF.Savegame.UI
             this.label7.Size = new System.Drawing.Size(35, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "HP:";
-            // 
-            // picMU
-            // 
-            this.picMU.AccessibleName = "Modify Unit - Sample Picture";
-            this.picMU.ErrorImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.InitialImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.Location = new System.Drawing.Point(699, 22);
-            this.picMU.Name = "picMU";
-            this.picMU.Size = new System.Drawing.Size(260, 182);
-            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMU.TabIndex = 8;
-            this.picMU.TabStop = false;
             // 
             // label3
             // 
@@ -494,17 +477,6 @@ namespace Satoru.SRWF.Savegame.UI
             this.txtHexa.Size = new System.Drawing.Size(175, 26);
             this.txtHexa.TabIndex = 14;
             // 
-            // picMUMobility
-            // 
-            this.picMUMobility.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_mobility;
-            this.picMUMobility.Location = new System.Drawing.Point(712, 152);
-            this.picMUMobility.Name = "picMUMobility";
-            this.picMUMobility.Size = new System.Drawing.Size(65, 13);
-            this.picMUMobility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUMobility.TabIndex = 23;
-            this.picMUMobility.TabStop = false;
-            this.picMUMobility.Visible = false;
-            // 
             // picMULimit
             // 
             this.picMULimit.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_limit;
@@ -527,6 +499,78 @@ namespace Satoru.SRWF.Savegame.UI
             this.picMUArmor.TabStop = false;
             this.picMUArmor.Visible = false;
             // 
+            // picMUMobility
+            // 
+            this.picMUMobility.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_mobility;
+            this.picMUMobility.Location = new System.Drawing.Point(712, 152);
+            this.picMUMobility.Name = "picMUMobility";
+            this.picMUMobility.Size = new System.Drawing.Size(65, 13);
+            this.picMUMobility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUMobility.TabIndex = 23;
+            this.picMUMobility.TabStop = false;
+            this.picMUMobility.Visible = false;
+            // 
+            // picMUHp
+            // 
+            this.picMUHp.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_hp;
+            this.picMUHp.Location = new System.Drawing.Point(712, 126);
+            this.picMUHp.Name = "picMUHp";
+            this.picMUHp.Size = new System.Drawing.Size(65, 13);
+            this.picMUHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUHp.TabIndex = 22;
+            this.picMUHp.TabStop = false;
+            this.picMUHp.Visible = false;
+            // 
+            // picMU
+            // 
+            this.picMU.AccessibleName = "Modify Unit - Sample Picture";
+            this.picMU.ErrorImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.InitialImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.Location = new System.Drawing.Point(699, 22);
+            this.picMU.Name = "picMU";
+            this.picMU.Size = new System.Drawing.Size(260, 182);
+            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMU.TabIndex = 8;
+            this.picMU.TabStop = false;
+            // 
+            // picMUEn
+            // 
+            this.picMUEn.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_en;
+            this.picMUEn.Location = new System.Drawing.Point(712, 139);
+            this.picMUEn.Name = "picMUEn";
+            this.picMUEn.Size = new System.Drawing.Size(65, 13);
+            this.picMUEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUEn.TabIndex = 26;
+            this.picMUEn.TabStop = false;
+            this.picMUEn.Visible = false;
+            // 
+            // grpMUUnitStats
+            // 
+            this.grpMUUnitStats.Controls.Add(this.tableLayoutPanel1);
+            this.grpMUUnitStats.Location = new System.Drawing.Point(8, 280);
+            this.grpMUUnitStats.Name = "grpMUUnitStats";
+            this.grpMUUnitStats.Size = new System.Drawing.Size(277, 332);
+            this.grpMUUnitStats.TabIndex = 5;
+            this.grpMUUnitStats.TabStop = false;
+            this.grpMUUnitStats.Text = "Unit Stats";
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 25);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 5;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 301);
+            this.tableLayoutPanel1.TabIndex = 0;
+            // 
             // frmSaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -537,7 +581,7 @@ namespace Satoru.SRWF.Savegame.UI
             this.Controls.Add(this.btnOpenFolder);
             this.Controls.Add(this.mnuTop);
             this.Controls.Add(this.btnSave);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabEditor);
             this.Controls.Add(this.statusBottom);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSaveEditor";
@@ -545,7 +589,7 @@ namespace Satoru.SRWF.Savegame.UI
             this.Load += new System.EventHandler(this.frmSaveEditor_Load);
             this.statusBottom.ResumeLayout(false);
             this.statusBottom.PerformLayout();
-            this.tabControl1.ResumeLayout(false);
+            this.tabEditor.ResumeLayout(false);
             this.tabChangeFunds.ResumeLayout(false);
             this.tabChangeFunds.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCFFunds)).EndInit();
@@ -553,28 +597,23 @@ namespace Satoru.SRWF.Savegame.UI
             this.tabModifyUnit.PerformLayout();
             this.grpMUUnit.ResumeLayout(false);
             this.grpMUUnit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMU)).EndInit();
             this.mnuTop.ResumeLayout(false);
             this.mnuTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).EndInit();
+            this.grpMUUnitStats.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
-            this.txtMUId.GotFocus += txtMU_GotFocus;
-            this.txtMUHexa.GotFocus += txtMU_GotFocus;
-            this.txtMUHP.GotFocus += txtMU_GotFocus;
-            this.txtMUMobility.GotFocus += txtMU_GotFocus;
-            this.txtMUArmor.GotFocus += txtMU_GotFocus;
-            this.txtMULimit.GotFocus += txtMU_GotFocus;
-            this.txtMUNote.GotFocus += txtMU_GotFocus;
         }
 
         #endregion
         private System.Windows.Forms.StatusStrip statusBottom;
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabEditor;
         private System.Windows.Forms.TabPage tabChangeFunds;
         private System.Windows.Forms.TabPage tabAddUnit;
         private System.Windows.Forms.TabPage tabAddPilot;
@@ -616,5 +655,8 @@ namespace Satoru.SRWF.Savegame.UI
         private System.Windows.Forms.PictureBox picMUMobility;
         private System.Windows.Forms.PictureBox picMULimit;
         private System.Windows.Forms.PictureBox picMUArmor;
+        private System.Windows.Forms.PictureBox picMUEn;
+        private System.Windows.Forms.GroupBox grpMUUnitStats;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
     }
 }

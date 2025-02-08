@@ -17,7 +17,18 @@ namespace Satoru.SRWF.Savegame.UI
         public frmSaveEditor()
         {
             InitializeComponent();
+            Initialize();
+        }
 
+        private void Initialize()
+        {
+            this.txtMUId.GotFocus += txtMU_GotFocus;
+            this.txtMUHexa.GotFocus += txtMU_GotFocus;
+            this.txtMUHP.GotFocus += txtMU_GotFocus;
+            this.txtMUMobility.GotFocus += txtMU_GotFocus;
+            this.txtMUArmor.GotFocus += txtMU_GotFocus;
+            this.txtMULimit.GotFocus += txtMU_GotFocus;
+            this.txtMUNote.GotFocus += txtMU_GotFocus;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -51,9 +62,15 @@ namespace Satoru.SRWF.Savegame.UI
         {
             if (File.Exists(filename))
             {
+                _filename = filename;
+
                 lblStatus.Text = filename;
                 btnOpenFolder.Enabled = true;
-                _filename = filename;
+                tabEditor.Enabled = true;
+
+#if DEBUG
+                tabEditor.SelectedTab = tabEditor.TabPages["tabModifyUnit"];
+#endif
 
                 bool isFirstTime = _editor == null;
                 _editor = new Editor(filename);
