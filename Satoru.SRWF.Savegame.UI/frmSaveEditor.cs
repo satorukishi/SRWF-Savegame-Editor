@@ -6,6 +6,8 @@ using System.Configuration;
 using System.Windows.Forms;
 using System.IO;
 using System.Diagnostics;
+using System.Drawing;
+using Satoru.SRWF.Savegame.UI.Properties;
 
 namespace Satoru.SRWF.Savegame.UI
 {
@@ -24,11 +26,17 @@ namespace Satoru.SRWF.Savegame.UI
         {
             this.txtMUId.GotFocus += txtMU_GotFocus;
             this.txtMUHexa.GotFocus += txtMU_GotFocus;
-            this.txtMUHP.GotFocus += txtMU_GotFocus;
+            this.txtMUHp.GotFocus += txtMU_GotFocus;
             this.txtMUMobility.GotFocus += txtMU_GotFocus;
             this.txtMUArmor.GotFocus += txtMU_GotFocus;
             this.txtMULimit.GotFocus += txtMU_GotFocus;
             this.txtMUNote.GotFocus += txtMU_GotFocus;
+            this.numMUHp.GotFocus += txtMU_GotFocus;
+            this.numMUEn.GotFocus += txtMU_GotFocus;
+            this.numMUMobility.GotFocus += txtMU_GotFocus;
+            this.numMUArmor.GotFocus += txtMU_GotFocus;
+            this.numMULimit.GotFocus += txtMU_GotFocus;
+            this.tblUnit.SetRowSpan(txtMUNote, 3);
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -38,7 +46,19 @@ namespace Satoru.SRWF.Savegame.UI
                 Funds = (int)numCFFunds.Value,
                 Unit = (Unit)cboMUUnit.SelectedValue
             };
+
+            ModifyUnit(save.Unit);
+
             txtHexa.Text = _editor.Save(save);
+        }
+
+        private void ModifyUnit(Unit unit)
+        {
+            unit.StatsUpgrade.HP = (byte)numMUHp.Value;
+            unit.StatsUpgrade.EN = (byte)numMUEn.Value;
+            unit.StatsUpgrade.Mobility = (byte)numMUMobility.Value;
+            unit.StatsUpgrade.Armor = (byte)numMUArmor.Value;
+            unit.StatsUpgrade.Limit = (byte)numMULimit.Value;
         }
 
         private void openToolStripMenuItem_Click(object sender, EventArgs e)
@@ -114,7 +134,7 @@ namespace Satoru.SRWF.Savegame.UI
                 grpMUUnit.Text = unit.Name;
                 txtMUId.Text = unit.Id.ToString();
                 txtMUHexa.Text = unit.Hexa;
-                txtMUHP.Text = unit.HP;
+                txtMUHp.Text = unit.HP;
                 txtMUMobility.Text = unit.Mobility;
                 txtMUArmor.Text = unit.Armor;
                 txtMULimit.Text = unit.Limit;
@@ -124,14 +144,17 @@ namespace Satoru.SRWF.Savegame.UI
 
         private void txtMU_GotFocus(object sender, EventArgs e)
         {
-            TextBox txt = (TextBox)sender;
+            Control control = (Control)sender;
 
-            picMUHp.Visible = picMUMobility.Visible = picMUArmor.Visible = picMULimit.Visible = false;
-            
-            switch (txt.Name.Substring(5))
+            picMUHp.Visible = picMUEn.Visible = picMUMobility.Visible = picMUArmor.Visible = picMULimit.Visible = false;
+
+            switch (control.Name.Substring(5))
             {
-                case "HP":
+                case "Hp":
                     picMUHp.Visible = true;
+                    break;
+                case "En":
+                    picMUEn.Visible = true;
                     break;
                 case "Mobility":
                     picMUMobility.Visible = true;
@@ -150,9 +173,72 @@ namespace Satoru.SRWF.Savegame.UI
         private enum UnitAttribute
         {
             HP,
+            EN,
             Mobility,
             Armor,
             Limit
+        }
+
+        private void numMU_ValueChanged(object sender, EventArgs e)
+        {
+            Control control = (Control)sender;
+            Bitmap bitmap = new Bitmap(Resources.unit_sample);
+            Graphics g = Graphics.FromImage(bitmap);
+            Image upgrade = Resources.unit_sample_upgrade;
+
+            int xLocation = SampleLocation.X;
+
+            for (int i = 1; i < numMUHp.Maximum; i++)
+            {
+                int x = xLocation + (i - 1) * SampleLocation.UPGRADE_WIDTH;
+                bool exit = true;
+
+                if (i <= numMUHp.Value)
+                {
+                    g.DrawImage(upgrade, x, SampleLocation.Y_HP);
+                    exit = false;
+                }
+                if (i <= numMUEn.Value)
+                {
+                    g.DrawImage(upgrade, x, SampleLocation.Y_EN);
+                    exit = false;
+                }
+                if (i <= numMUMobility.Value)
+                {
+                    g.DrawImage(upgrade, x, SampleLocation.Y_MOBILITY);
+                    exit = false;
+                }
+                if (i <= numMUArmor.Value)
+                {
+                    g.DrawImage(upgrade, x, SampleLocation.Y_ARMOR);
+                    exit = false;
+                }
+                if (i <= numMULimit.Value)
+                {
+                    g.DrawImage(upgrade, x, SampleLocation.Y_LIMIT);
+                    exit = false;
+                }
+
+                if (exit)
+                {
+                    break;
+                }
+            }
+
+            picMU.Image = bitmap;
+        }
+
+
+        private class SampleLocation
+        {
+            public const int Y_HP = 264;
+            public const int Y_EN = 296;
+            public const int Y_MOBILITY = 328;
+            public const int Y_ARMOR = 360;
+            public const int Y_LIMIT = 392;
+
+            public const int X = 320;
+            public const int UPGRADE_WIDTH = 16;
         }
     }
 }

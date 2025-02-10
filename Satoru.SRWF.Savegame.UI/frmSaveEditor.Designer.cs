@@ -39,22 +39,42 @@ namespace Satoru.SRWF.Savegame.UI
             this.lblFunds = new System.Windows.Forms.Label();
             this.tabAddUnit = new System.Windows.Forms.TabPage();
             this.tabModifyUnit = new System.Windows.Forms.TabPage();
-            this.grpMUUnit = new System.Windows.Forms.GroupBox();
+            this.grpMUUnitStats = new System.Windows.Forms.GroupBox();
+            this.tblUnitStats = new System.Windows.Forms.TableLayoutPanel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.picMUEn = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.txtMUNote = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.txtMULimit = new System.Windows.Forms.TextBox();
-            this.txtMUArmor = new System.Windows.Forms.TextBox();
-            this.txtMUMobility = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtMUHP = new System.Windows.Forms.TextBox();
-            this.txtMUHexa = new System.Windows.Forms.TextBox();
-            this.txtMUId = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.picMUHp = new System.Windows.Forms.PictureBox();
+            this.picMULimit = new System.Windows.Forms.PictureBox();
+            this.picMUMobility = new System.Windows.Forms.PictureBox();
+            this.picMUArmor = new System.Windows.Forms.PictureBox();
+            this.picMU = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.numMUHp = new System.Windows.Forms.NumericUpDown();
+            this.numMUEn = new System.Windows.Forms.NumericUpDown();
+            this.numMUMobility = new System.Windows.Forms.NumericUpDown();
+            this.numMUArmor = new System.Windows.Forms.NumericUpDown();
+            this.numMULimit = new System.Windows.Forms.NumericUpDown();
+            this.grpMUUnit = new System.Windows.Forms.GroupBox();
+            this.tblUnit = new System.Windows.Forms.TableLayoutPanel();
             this.label2 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtMUId = new System.Windows.Forms.TextBox();
+            this.txtMUMobility = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtMUNote = new System.Windows.Forms.TextBox();
+            this.txtMUHexa = new System.Windows.Forms.TextBox();
+            this.txtMUArmor = new System.Windows.Forms.TextBox();
+            this.txtMULimit = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtMUHp = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.cboMUUnit = new System.Windows.Forms.ComboBox();
             this.tabAddPilot = new System.Windows.Forms.TabPage();
@@ -69,28 +89,28 @@ namespace Satoru.SRWF.Savegame.UI
             this.btnOpenFolder = new System.Windows.Forms.Button();
             this.lblHexa = new System.Windows.Forms.Label();
             this.txtHexa = new System.Windows.Forms.TextBox();
-            this.picMULimit = new System.Windows.Forms.PictureBox();
-            this.picMUArmor = new System.Windows.Forms.PictureBox();
-            this.picMUMobility = new System.Windows.Forms.PictureBox();
-            this.picMUHp = new System.Windows.Forms.PictureBox();
-            this.picMU = new System.Windows.Forms.PictureBox();
-            this.picMUEn = new System.Windows.Forms.PictureBox();
-            this.grpMUUnitStats = new System.Windows.Forms.GroupBox();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.statusBottom.SuspendLayout();
             this.tabEditor.SuspendLayout();
             this.tabChangeFunds.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numCFFunds)).BeginInit();
             this.tabModifyUnit.SuspendLayout();
-            this.grpMUUnit.SuspendLayout();
-            this.mnuTop.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMU)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).BeginInit();
             this.grpMUUnitStats.SuspendLayout();
+            this.tblUnitStats.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMU)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUHp)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUEn)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUMobility)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUArmor)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMULimit)).BeginInit();
+            this.grpMUUnit.SuspendLayout();
+            this.tblUnit.SuspendLayout();
+            this.mnuTop.SuspendLayout();
             this.SuspendLayout();
             // 
             // statusBottom
@@ -190,164 +210,416 @@ namespace Satoru.SRWF.Savegame.UI
             this.tabModifyUnit.Text = "Modify Unit (ユニット)";
             this.tabModifyUnit.UseVisualStyleBackColor = true;
             // 
-            // grpMUUnit
+            // grpMUUnitStats
             // 
-            this.grpMUUnit.Controls.Add(this.picMUEn);
-            this.grpMUUnit.Controls.Add(this.picMULimit);
-            this.grpMUUnit.Controls.Add(this.picMUArmor);
-            this.grpMUUnit.Controls.Add(this.picMUMobility);
-            this.grpMUUnit.Controls.Add(this.picMUHp);
-            this.grpMUUnit.Controls.Add(this.label9);
-            this.grpMUUnit.Controls.Add(this.txtMUNote);
-            this.grpMUUnit.Controls.Add(this.label8);
-            this.grpMUUnit.Controls.Add(this.txtMULimit);
-            this.grpMUUnit.Controls.Add(this.txtMUArmor);
-            this.grpMUUnit.Controls.Add(this.txtMUMobility);
-            this.grpMUUnit.Controls.Add(this.label4);
-            this.grpMUUnit.Controls.Add(this.label5);
-            this.grpMUUnit.Controls.Add(this.txtMUHP);
-            this.grpMUUnit.Controls.Add(this.txtMUHexa);
-            this.grpMUUnit.Controls.Add(this.txtMUId);
-            this.grpMUUnit.Controls.Add(this.label6);
-            this.grpMUUnit.Controls.Add(this.label7);
-            this.grpMUUnit.Controls.Add(this.picMU);
-            this.grpMUUnit.Controls.Add(this.label3);
-            this.grpMUUnit.Controls.Add(this.label2);
-            this.grpMUUnit.Location = new System.Drawing.Point(8, 43);
-            this.grpMUUnit.Name = "grpMUUnit";
-            this.grpMUUnit.Size = new System.Drawing.Size(1019, 231);
-            this.grpMUUnit.TabIndex = 4;
-            this.grpMUUnit.TabStop = false;
-            this.grpMUUnit.Text = "Unit";
+            this.grpMUUnitStats.Controls.Add(this.tblUnitStats);
+            this.grpMUUnitStats.Location = new System.Drawing.Point(8, 179);
+            this.grpMUUnitStats.Name = "grpMUUnitStats";
+            this.grpMUUnitStats.Size = new System.Drawing.Size(275, 398);
+            this.grpMUUnitStats.TabIndex = 5;
+            this.grpMUUnitStats.TabStop = false;
+            this.grpMUUnitStats.Text = "Unit Stats Upgrade";
+            // 
+            // tblUnitStats
+            // 
+            this.tblUnitStats.ColumnCount = 2;
+            this.tblUnitStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tblUnitStats.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tblUnitStats.Controls.Add(this.panel1, 0, 5);
+            this.tblUnitStats.Controls.Add(this.label10, 0, 0);
+            this.tblUnitStats.Controls.Add(this.label11, 0, 2);
+            this.tblUnitStats.Controls.Add(this.label12, 0, 3);
+            this.tblUnitStats.Controls.Add(this.label13, 0, 4);
+            this.tblUnitStats.Controls.Add(this.label14, 0, 1);
+            this.tblUnitStats.Controls.Add(this.numMUHp, 1, 0);
+            this.tblUnitStats.Controls.Add(this.numMUEn, 1, 1);
+            this.tblUnitStats.Controls.Add(this.numMUMobility, 1, 2);
+            this.tblUnitStats.Controls.Add(this.numMUArmor, 1, 3);
+            this.tblUnitStats.Controls.Add(this.numMULimit, 1, 4);
+            this.tblUnitStats.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tblUnitStats.Location = new System.Drawing.Point(3, 22);
+            this.tblUnitStats.Name = "tblUnitStats";
+            this.tblUnitStats.RowCount = 6;
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnitStats.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tblUnitStats.Size = new System.Drawing.Size(269, 373);
+            this.tblUnitStats.TabIndex = 0;
+            // 
+            // panel1
+            // 
+            this.tblUnitStats.SetColumnSpan(this.panel1, 2);
+            this.panel1.Controls.Add(this.picMUEn);
+            this.panel1.Controls.Add(this.label9);
+            this.panel1.Controls.Add(this.picMUHp);
+            this.panel1.Controls.Add(this.picMULimit);
+            this.panel1.Controls.Add(this.picMUMobility);
+            this.panel1.Controls.Add(this.picMUArmor);
+            this.panel1.Controls.Add(this.picMU);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(3, 163);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(263, 207);
+            this.panel1.TabIndex = 17;
+            // 
+            // picMUEn
+            // 
+            this.picMUEn.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_en;
+            this.picMUEn.Location = new System.Drawing.Point(16, 117);
+            this.picMUEn.Name = "picMUEn";
+            this.picMUEn.Size = new System.Drawing.Size(65, 13);
+            this.picMUEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUEn.TabIndex = 26;
+            this.picMUEn.TabStop = false;
+            this.picMUEn.Visible = false;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(807, 207);
+            this.label9.Location = new System.Drawing.Point(111, 185);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(55, 17);
             this.label9.TabIndex = 21;
             this.label9.Text = "Sample";
             // 
-            // txtMUNote
+            // picMUHp
             // 
-            this.txtMUNote.Location = new System.Drawing.Point(147, 88);
-            this.txtMUNote.Name = "txtMUNote";
-            this.txtMUNote.ReadOnly = true;
-            this.txtMUNote.Size = new System.Drawing.Size(322, 26);
-            this.txtMUNote.TabIndex = 20;
+            this.picMUHp.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_hp;
+            this.picMUHp.Location = new System.Drawing.Point(16, 104);
+            this.picMUHp.Name = "picMUHp";
+            this.picMUHp.Size = new System.Drawing.Size(65, 13);
+            this.picMUHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUHp.TabIndex = 22;
+            this.picMUHp.TabStop = false;
+            this.picMUHp.Visible = false;
             // 
-            // label8
+            // picMULimit
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(89, 91);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 20);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Note:";
+            this.picMULimit.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_limit;
+            this.picMULimit.Location = new System.Drawing.Point(16, 156);
+            this.picMULimit.Name = "picMULimit";
+            this.picMULimit.Size = new System.Drawing.Size(65, 13);
+            this.picMULimit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMULimit.TabIndex = 25;
+            this.picMULimit.TabStop = false;
+            this.picMULimit.Visible = false;
             // 
-            // txtMULimit
+            // picMUMobility
             // 
-            this.txtMULimit.Location = new System.Drawing.Point(580, 55);
-            this.txtMULimit.Name = "txtMULimit";
-            this.txtMULimit.ReadOnly = true;
-            this.txtMULimit.Size = new System.Drawing.Size(100, 26);
-            this.txtMULimit.TabIndex = 18;
+            this.picMUMobility.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_mobility;
+            this.picMUMobility.Location = new System.Drawing.Point(16, 130);
+            this.picMUMobility.Name = "picMUMobility";
+            this.picMUMobility.Size = new System.Drawing.Size(65, 13);
+            this.picMUMobility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUMobility.TabIndex = 23;
+            this.picMUMobility.TabStop = false;
+            this.picMUMobility.Visible = false;
             // 
-            // txtMUArmor
+            // picMUArmor
             // 
-            this.txtMUArmor.Location = new System.Drawing.Point(369, 54);
-            this.txtMUArmor.Name = "txtMUArmor";
-            this.txtMUArmor.ReadOnly = true;
-            this.txtMUArmor.Size = new System.Drawing.Size(100, 26);
-            this.txtMUArmor.TabIndex = 17;
+            this.picMUArmor.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_armor;
+            this.picMUArmor.Location = new System.Drawing.Point(16, 143);
+            this.picMUArmor.Name = "picMUArmor";
+            this.picMUArmor.Size = new System.Drawing.Size(65, 13);
+            this.picMUArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMUArmor.TabIndex = 24;
+            this.picMUArmor.TabStop = false;
+            this.picMUArmor.Visible = false;
             // 
-            // txtMUMobility
+            // picMU
             // 
-            this.txtMUMobility.Location = new System.Drawing.Point(147, 55);
-            this.txtMUMobility.Name = "txtMUMobility";
-            this.txtMUMobility.ReadOnly = true;
-            this.txtMUMobility.Size = new System.Drawing.Size(100, 26);
-            this.txtMUMobility.TabIndex = 16;
+            this.picMU.AccessibleName = "Modify Unit - Sample Picture";
+            this.picMU.ErrorImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.InitialImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
+            this.picMU.Location = new System.Drawing.Point(3, 0);
+            this.picMU.Name = "picMU";
+            this.picMU.Size = new System.Drawing.Size(260, 182);
+            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.picMU.TabIndex = 8;
+            this.picMU.TabStop = false;
             // 
-            // label4
+            // label10
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(482, 58);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Limit (限界):";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(3, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(35, 20);
+            this.label10.TabIndex = 10;
+            this.label10.Text = "HP:";
             // 
-            // label5
+            // label11
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(263, 58);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(102, 20);
-            this.label5.TabIndex = 14;
-            this.label5.Text = "Armor (装甲):";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(3, 64);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(127, 20);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Mobility (運動性):";
             // 
-            // txtMUHP
+            // label12
             // 
-            this.txtMUHP.Location = new System.Drawing.Point(580, 22);
-            this.txtMUHP.Name = "txtMUHP";
-            this.txtMUHP.ReadOnly = true;
-            this.txtMUHP.Size = new System.Drawing.Size(100, 26);
-            this.txtMUHP.TabIndex = 13;
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(3, 96);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(102, 20);
+            this.label12.TabIndex = 14;
+            this.label12.Text = "Armor (装甲):";
             // 
-            // txtMUHexa
+            // label13
             // 
-            this.txtMUHexa.Location = new System.Drawing.Point(369, 22);
-            this.txtMUHexa.Name = "txtMUHexa";
-            this.txtMUHexa.ReadOnly = true;
-            this.txtMUHexa.Size = new System.Drawing.Size(100, 26);
-            this.txtMUHexa.TabIndex = 12;
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(3, 128);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(92, 20);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Limit (限界):";
             // 
-            // txtMUId
+            // label14
             // 
-            this.txtMUId.Location = new System.Drawing.Point(147, 22);
-            this.txtMUId.Name = "txtMUId";
-            this.txtMUId.ReadOnly = true;
-            this.txtMUId.Size = new System.Drawing.Size(100, 26);
-            this.txtMUId.TabIndex = 11;
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(3, 32);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(35, 20);
+            this.label14.TabIndex = 10;
+            this.label14.Text = "EN:";
+            // 
+            // numMUHp
+            // 
+            this.numMUHp.Location = new System.Drawing.Point(136, 3);
+            this.numMUHp.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMUHp.Name = "numMUHp";
+            this.numMUHp.Size = new System.Drawing.Size(127, 26);
+            this.numMUHp.TabIndex = 16;
+            this.numMUHp.ValueChanged += new System.EventHandler(this.numMU_ValueChanged);
+            // 
+            // numMUEn
+            // 
+            this.numMUEn.Location = new System.Drawing.Point(136, 35);
+            this.numMUEn.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMUEn.Name = "numMUEn";
+            this.numMUEn.Size = new System.Drawing.Size(127, 26);
+            this.numMUEn.TabIndex = 16;
+            this.numMUEn.ValueChanged += new System.EventHandler(this.numMU_ValueChanged);
+            // 
+            // numMUMobility
+            // 
+            this.numMUMobility.Location = new System.Drawing.Point(136, 67);
+            this.numMUMobility.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMUMobility.Name = "numMUMobility";
+            this.numMUMobility.Size = new System.Drawing.Size(127, 26);
+            this.numMUMobility.TabIndex = 16;
+            this.numMUMobility.ValueChanged += new System.EventHandler(this.numMU_ValueChanged);
+            // 
+            // numMUArmor
+            // 
+            this.numMUArmor.Location = new System.Drawing.Point(136, 99);
+            this.numMUArmor.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMUArmor.Name = "numMUArmor";
+            this.numMUArmor.Size = new System.Drawing.Size(127, 26);
+            this.numMUArmor.TabIndex = 16;
+            this.numMUArmor.ValueChanged += new System.EventHandler(this.numMU_ValueChanged);
+            // 
+            // numMULimit
+            // 
+            this.numMULimit.Location = new System.Drawing.Point(136, 131);
+            this.numMULimit.Maximum = new decimal(new int[] {
+            10,
+            0,
+            0,
+            0});
+            this.numMULimit.Name = "numMULimit";
+            this.numMULimit.Size = new System.Drawing.Size(127, 26);
+            this.numMULimit.TabIndex = 16;
+            this.numMULimit.ValueChanged += new System.EventHandler(this.numMU_ValueChanged);
+            // 
+            // grpMUUnit
+            // 
+            this.grpMUUnit.Controls.Add(this.tblUnit);
+            this.grpMUUnit.Location = new System.Drawing.Point(8, 43);
+            this.grpMUUnit.Name = "grpMUUnit";
+            this.grpMUUnit.Size = new System.Drawing.Size(742, 130);
+            this.grpMUUnit.TabIndex = 4;
+            this.grpMUUnit.TabStop = false;
+            this.grpMUUnit.Text = "Unit (Readonly)";
+            // 
+            // tblUnit
+            // 
+            this.tblUnit.ColumnCount = 6;
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 109F));
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33F));
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 99F));
+            this.tblUnit.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.34F));
+            this.tblUnit.Controls.Add(this.label2, 0, 0);
+            this.tblUnit.Controls.Add(this.label6, 0, 1);
+            this.tblUnit.Controls.Add(this.txtMUId, 1, 0);
+            this.tblUnit.Controls.Add(this.txtMUMobility, 1, 1);
+            this.tblUnit.Controls.Add(this.label3, 2, 0);
+            this.tblUnit.Controls.Add(this.label5, 2, 1);
+            this.tblUnit.Controls.Add(this.txtMUNote, 1, 2);
+            this.tblUnit.Controls.Add(this.txtMUHexa, 3, 0);
+            this.tblUnit.Controls.Add(this.txtMUArmor, 3, 1);
+            this.tblUnit.Controls.Add(this.txtMULimit, 5, 1);
+            this.tblUnit.Controls.Add(this.label7, 4, 0);
+            this.tblUnit.Controls.Add(this.txtMUHp, 5, 0);
+            this.tblUnit.Controls.Add(this.label4, 4, 1);
+            this.tblUnit.Controls.Add(this.label8, 0, 2);
+            this.tblUnit.Location = new System.Drawing.Point(3, 25);
+            this.tblUnit.Name = "tblUnit";
+            this.tblUnit.RowCount = 3;
+            this.tblUnit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnit.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 32F));
+            this.tblUnit.Size = new System.Drawing.Size(733, 97);
+            this.tblUnit.TabIndex = 7;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(3, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(30, 20);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "ID:";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(9, 58);
+            this.label6.Location = new System.Drawing.Point(3, 32);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(127, 20);
             this.label6.TabIndex = 10;
             this.label6.Text = "Mobility (運動性):";
             // 
-            // label7
+            // txtMUId
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(539, 28);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 20);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "HP:";
+            this.txtMUId.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMUId.Location = new System.Drawing.Point(136, 3);
+            this.txtMUId.Name = "txtMUId";
+            this.txtMUId.ReadOnly = true;
+            this.txtMUId.Size = new System.Drawing.Size(124, 26);
+            this.txtMUId.TabIndex = 11;
+            // 
+            // txtMUMobility
+            // 
+            this.txtMUMobility.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMUMobility.Location = new System.Drawing.Point(136, 35);
+            this.txtMUMobility.Name = "txtMUMobility";
+            this.txtMUMobility.ReadOnly = true;
+            this.txtMUMobility.Size = new System.Drawing.Size(124, 26);
+            this.txtMUMobility.TabIndex = 16;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(313, 25);
+            this.label3.Location = new System.Drawing.Point(266, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(50, 20);
             this.label3.TabIndex = 4;
             this.label3.Text = "Hexa:";
             // 
-            // label2
+            // label5
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(106, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(30, 20);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "ID:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(266, 32);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 20);
+            this.label5.TabIndex = 14;
+            this.label5.Text = "Armor (装甲):";
+            // 
+            // txtMUNote
+            // 
+            this.tblUnit.SetColumnSpan(this.txtMUNote, 3);
+            this.txtMUNote.Location = new System.Drawing.Point(136, 67);
+            this.txtMUNote.Name = "txtMUNote";
+            this.txtMUNote.ReadOnly = true;
+            this.txtMUNote.Size = new System.Drawing.Size(363, 26);
+            this.txtMUNote.TabIndex = 20;
+            // 
+            // txtMUHexa
+            // 
+            this.txtMUHexa.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMUHexa.Location = new System.Drawing.Point(375, 3);
+            this.txtMUHexa.Name = "txtMUHexa";
+            this.txtMUHexa.ReadOnly = true;
+            this.txtMUHexa.Size = new System.Drawing.Size(124, 26);
+            this.txtMUHexa.TabIndex = 12;
+            // 
+            // txtMUArmor
+            // 
+            this.txtMUArmor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMUArmor.Location = new System.Drawing.Point(375, 35);
+            this.txtMUArmor.Name = "txtMUArmor";
+            this.txtMUArmor.ReadOnly = true;
+            this.txtMUArmor.Size = new System.Drawing.Size(124, 26);
+            this.txtMUArmor.TabIndex = 17;
+            // 
+            // txtMULimit
+            // 
+            this.txtMULimit.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMULimit.Location = new System.Drawing.Point(604, 35);
+            this.txtMULimit.Name = "txtMULimit";
+            this.txtMULimit.ReadOnly = true;
+            this.txtMULimit.Size = new System.Drawing.Size(126, 26);
+            this.txtMULimit.TabIndex = 18;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(505, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(35, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "HP:";
+            // 
+            // txtMUHp
+            // 
+            this.txtMUHp.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtMUHp.Location = new System.Drawing.Point(604, 3);
+            this.txtMUHp.Name = "txtMUHp";
+            this.txtMUHp.ReadOnly = true;
+            this.txtMUHp.Size = new System.Drawing.Size(126, 26);
+            this.txtMUHp.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(505, 32);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Limit (限界):";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(3, 64);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(47, 20);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Note:";
             // 
             // label1
             // 
@@ -477,100 +749,6 @@ namespace Satoru.SRWF.Savegame.UI
             this.txtHexa.Size = new System.Drawing.Size(175, 26);
             this.txtHexa.TabIndex = 14;
             // 
-            // picMULimit
-            // 
-            this.picMULimit.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_limit;
-            this.picMULimit.Location = new System.Drawing.Point(712, 178);
-            this.picMULimit.Name = "picMULimit";
-            this.picMULimit.Size = new System.Drawing.Size(65, 13);
-            this.picMULimit.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMULimit.TabIndex = 25;
-            this.picMULimit.TabStop = false;
-            this.picMULimit.Visible = false;
-            // 
-            // picMUArmor
-            // 
-            this.picMUArmor.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_armor;
-            this.picMUArmor.Location = new System.Drawing.Point(712, 165);
-            this.picMUArmor.Name = "picMUArmor";
-            this.picMUArmor.Size = new System.Drawing.Size(65, 13);
-            this.picMUArmor.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUArmor.TabIndex = 24;
-            this.picMUArmor.TabStop = false;
-            this.picMUArmor.Visible = false;
-            // 
-            // picMUMobility
-            // 
-            this.picMUMobility.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_mobility;
-            this.picMUMobility.Location = new System.Drawing.Point(712, 152);
-            this.picMUMobility.Name = "picMUMobility";
-            this.picMUMobility.Size = new System.Drawing.Size(65, 13);
-            this.picMUMobility.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUMobility.TabIndex = 23;
-            this.picMUMobility.TabStop = false;
-            this.picMUMobility.Visible = false;
-            // 
-            // picMUHp
-            // 
-            this.picMUHp.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_hp;
-            this.picMUHp.Location = new System.Drawing.Point(712, 126);
-            this.picMUHp.Name = "picMUHp";
-            this.picMUHp.Size = new System.Drawing.Size(65, 13);
-            this.picMUHp.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUHp.TabIndex = 22;
-            this.picMUHp.TabStop = false;
-            this.picMUHp.Visible = false;
-            // 
-            // picMU
-            // 
-            this.picMU.AccessibleName = "Modify Unit - Sample Picture";
-            this.picMU.ErrorImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.InitialImage = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample;
-            this.picMU.Location = new System.Drawing.Point(699, 22);
-            this.picMU.Name = "picMU";
-            this.picMU.Size = new System.Drawing.Size(260, 182);
-            this.picMU.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMU.TabIndex = 8;
-            this.picMU.TabStop = false;
-            // 
-            // picMUEn
-            // 
-            this.picMUEn.Image = global::Satoru.SRWF.Savegame.UI.Properties.Resources.unit_sample_en;
-            this.picMUEn.Location = new System.Drawing.Point(712, 139);
-            this.picMUEn.Name = "picMUEn";
-            this.picMUEn.Size = new System.Drawing.Size(65, 13);
-            this.picMUEn.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.picMUEn.TabIndex = 26;
-            this.picMUEn.TabStop = false;
-            this.picMUEn.Visible = false;
-            // 
-            // grpMUUnitStats
-            // 
-            this.grpMUUnitStats.Controls.Add(this.tableLayoutPanel1);
-            this.grpMUUnitStats.Location = new System.Drawing.Point(8, 280);
-            this.grpMUUnitStats.Name = "grpMUUnitStats";
-            this.grpMUUnitStats.Size = new System.Drawing.Size(277, 332);
-            this.grpMUUnitStats.TabIndex = 5;
-            this.grpMUUnitStats.TabStop = false;
-            this.grpMUUnitStats.Text = "Unit Stats";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(2, 25);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 5;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(275, 301);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
             // frmSaveEditor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -595,17 +773,27 @@ namespace Satoru.SRWF.Savegame.UI
             ((System.ComponentModel.ISupportInitialize)(this.numCFFunds)).EndInit();
             this.tabModifyUnit.ResumeLayout(false);
             this.tabModifyUnit.PerformLayout();
+            this.grpMUUnitStats.ResumeLayout(false);
+            this.tblUnitStats.ResumeLayout(false);
+            this.tblUnitStats.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picMU)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUHp)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUEn)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUMobility)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMUArmor)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numMULimit)).EndInit();
             this.grpMUUnit.ResumeLayout(false);
-            this.grpMUUnit.PerformLayout();
+            this.tblUnit.ResumeLayout(false);
+            this.tblUnit.PerformLayout();
             this.mnuTop.ResumeLayout(false);
             this.mnuTop.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picMULimit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUArmor)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUMobility)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUHp)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMU)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picMUEn)).EndInit();
-            this.grpMUUnitStats.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -634,29 +822,41 @@ namespace Satoru.SRWF.Savegame.UI
         private System.Windows.Forms.TextBox txtHexa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboMUUnit;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox grpMUUnit;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox grpMUUnitStats;
+        private System.Windows.Forms.TableLayoutPanel tblUnitStats;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.NumericUpDown numMUHp;
+        private System.Windows.Forms.NumericUpDown numMUEn;
+        private System.Windows.Forms.NumericUpDown numMUMobility;
+        private System.Windows.Forms.NumericUpDown numMUArmor;
+        private System.Windows.Forms.NumericUpDown numMULimit;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox picMU;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox txtMUId;
-        private System.Windows.Forms.TextBox txtMULimit;
-        private System.Windows.Forms.TextBox txtMUArmor;
-        private System.Windows.Forms.TextBox txtMUMobility;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtMUHP;
-        private System.Windows.Forms.TextBox txtMUHexa;
-        private System.Windows.Forms.TextBox txtMUNote;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox picMUEn;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.PictureBox picMUHp;
-        private System.Windows.Forms.PictureBox picMUMobility;
         private System.Windows.Forms.PictureBox picMULimit;
+        private System.Windows.Forms.PictureBox picMUMobility;
         private System.Windows.Forms.PictureBox picMUArmor;
-        private System.Windows.Forms.PictureBox picMUEn;
-        private System.Windows.Forms.GroupBox grpMUUnitStats;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.TableLayoutPanel tblUnit;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtMUId;
+        private System.Windows.Forms.TextBox txtMUMobility;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txtMUNote;
+        private System.Windows.Forms.TextBox txtMUHexa;
+        private System.Windows.Forms.TextBox txtMUArmor;
+        private System.Windows.Forms.TextBox txtMULimit;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtMUHp;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label8;
     }
 }

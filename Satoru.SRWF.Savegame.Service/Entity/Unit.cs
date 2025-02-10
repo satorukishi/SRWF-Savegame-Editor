@@ -12,5 +12,23 @@
         public string Note { get; set; }
 
         public int Offset { get; set; }
+
+        public UnitStatsUpgrade StatsUpgrade { get; set; }
+
+
+        public Unit()
+        {
+            StatsUpgrade = new UnitStatsUpgrade();
+        }
+    }
+
+    public class  UnitStatsUpgrade
+    {
+        public byte HP { get; set; }
+        public byte EN { get; set; }
+        public byte Mobility { get; set; }
+        public byte Armor { get; set; }
+        public byte Limit { get; set; }
+
     }
 }
